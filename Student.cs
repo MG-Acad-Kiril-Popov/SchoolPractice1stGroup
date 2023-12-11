@@ -9,12 +9,13 @@ public class Student : PersonEntity
     public double GPA { get; set; }
     public int AttendanceCount { get; private set; }
 
-    public Student(string firstName, string lastName, DateTime birthDate, string address, int studentId, string major, double gpa)
+    public Student(string firstName, string lastName, DateTime birthDate, string address, int studentId, string major, double gpa, int attendanceCount)
         : base(firstName, lastName, birthDate, address)
     {
         this.StudentId = studentId;
         this.Major = major;
         this.GPA = gpa;
+        this.AttendanceCount = attendanceCount;
     }
 
     public override void DisplayPersonInfo()
@@ -23,6 +24,7 @@ public class Student : PersonEntity
         Console.WriteLine($"ID: {StudentId}");
         Console.WriteLine($"Major: {Major}");
         Console.WriteLine($"GPA: {GPA:F2}");
+        Console.WriteLine($"Attendance Count: {AttendanceCount}");
     }
 
     public void StudyHard()
